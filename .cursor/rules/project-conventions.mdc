@@ -1,0 +1,12 @@
+---
+description: 项目全局约定（技术栈、OpenSpec、测试规划）
+alwaysApply: true
+---
+
+# 项目约定
+
+- 技术栈：Next.js (App Router) + TypeScript + Tailwind CSS + Zustand
+- React 组件规范见 `react-component-conventions` 规则（tsx 文件）
+- 完整 AI 编码规范见项目根目录 `AGENTS.md`
+- 功能变更遵循 OpenSpec（`openspec/`）spec-driven 流程
+- 后续将结合 Superpower 并引入单测

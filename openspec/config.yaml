@@ -1,0 +1,12 @@
+schema: spec-driven
+
+context: |
+  个人主页项目（qiexuxing）。
+  技术栈：Next.js (App Router) + TypeScript + Tailwind CSS + Zustand。
+  UI 设计来源：Google Stitch（通过项目 .cursor/mcp.json 接入）。
+  后续计划：结合 Superpower、引入单测。
+
+  React 编码规范：
+  1. 除非页面出现性能问题，否则尽量不使用 useMemo 或 useCallback
+  2. useEffect 尽量减少依赖，最优为单个依赖
+  3. 单个组件不超过 400 行；超出时拆独立子组件（各自管理内部状态），禁止假优化（仅抽 hook 留 UI 壳）
