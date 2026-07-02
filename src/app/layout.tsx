@@ -1,27 +1,30 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, Syne } from "next/font/google";
+import { Archivo, Noto_Sans_SC } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
 });
 
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
+const notoSansSc = Noto_Sans_SC({
+  variable: "--font-noto-sans-sc",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "qiexuxing.top | 职业旅程与理念",
-  description: "在加速的时代里，选择有意的慢。专注于深度与清晰。",
+  title: {
+    default: "qiexuxing | 个人作品集",
+    template: "%s | qiexuxing",
+  },
+  description: "个人作品集 — Mind Mirror、AIGC 工作台",
+  applicationName: "qiexuxing",
 };
 
 export default function RootLayout({
@@ -30,13 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="zh-CN"
-      className={`${syne.variable} ${sourceSerif.variable} scroll-smooth dark`}
-    >
-      <body className="font-body-md text-body-md min-h-screen bg-background text-on-background selection:bg-primary selection:text-on-primary">
+    <html lang="zh-CN" className={`${archivo.variable} ${notoSansSc.variable}`}>
+      <body className="page-ambient flex min-h-screen flex-col text-foreground">
         <SiteHeader />
-        {children}
+        <div className="flex-1">{children}</div>
         <SiteFooter />
       </body>
     </html>
